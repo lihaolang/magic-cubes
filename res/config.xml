@@ -1,0 +1,6 @@
+<GameConfig>
+	<GameName>Magic-Cubes</GameName>
+	<ImageResDir>images</ImageResDir>
+	<AudioResDir>audios</AudioDir>
+	<ModelResDir>models</ModelResDir>
+</GameConfig>
