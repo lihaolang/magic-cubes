@@ -1,0 +1,15 @@
+				Magic-Cubes
+
+	介绍：这是一个简洁好玩的3D魔方游戏，希望大家喜欢。
+	1.编译环境：
+		Ubuntu14.04LTS
+		G++ 4.8.2
+	2.项目管理
+		CMake2.8
+		Git1.9.2
+	3.库文件
+		Boost1.5.54
+		OpenGL3.3 GLEW1
+		Assimp
+		DevIL
+		SDL2.0.2
