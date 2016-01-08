@@ -20,6 +20,11 @@
 namespace game{
 namespace config{
 
+	template <typename Type>
+	Type & as(boost::any an){
+		return boost::any_cast<Type&>(an);
+	}
+
 	class GameConfig
 	{
 	public:

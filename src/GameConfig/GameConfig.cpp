@@ -18,7 +18,7 @@ namespace config{
 		~GameConfigImpl();
 
 		boost::any getConfig(std::string name){
-			boost:: any ret=m_stConfigMap[name];
+			boost:: any & ret=m_stConfigMap[name];
 			if (ret.empty()){
 				std::cerr<<"没有此配置，退出。"<<std::endl;
 				std::exit(0);
