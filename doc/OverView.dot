@@ -1,0 +1,30 @@
+digraph OverView{
+
+node [shape=note];
+
+subgraph cluster_include {
+stdafx_h[label="StdAfx.h"];
+gameconfig_h[label="GameConfig.h"];
+}
+
+subgraph cluster_src{
+
+	label="src";
+
+	subgraph cluster_gameconfig{
+	label="GameConfig";
+	gameconfig_cpp[label="GameConfig.cpp"];
+	gameconfighead_h[label="GameConfigHead.h"];
+	parser_cpp[label="Parser.cpp"];
+	}
+
+}
+
+
+stdafx_h->gameconfig_h->gameconfighead_h;
+gameconfighead_h->parser_cpp;
+gameconfighead_h->gameconfig_cpp;
+
+{rank=same;gameconfig_cpp;parser_cpp};
+
+}

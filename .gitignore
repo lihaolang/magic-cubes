@@ -1,3 +1,7 @@
 #GameConfigTest的可执行文件
 /src/test/GameConfigTest/test1
 /src/test/GameConfigTest/test2
+
+
+#doc的图片(通过graphviz生成)
+/doc/OverView.png
