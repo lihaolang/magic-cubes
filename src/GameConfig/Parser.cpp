@@ -84,6 +84,23 @@ namespace config{
 		cm.insert(ConfigPair("GameName",pt.get<std::string>
 			("GameConfig.GameName","Magic-Cubes游戏")));
 
+		{
+			bpt::ptree pchild=pt.get_child("GameConfig.GLWindow");
+			cm.insert(ConfigPair("GLWindowTitle",pchild.get<std::string>
+				("Title","Magic-Cubes游戏")));
+			cm.insert(ConfigPair("GLWindowWidth",pchild.get<unsigned>
+				("Width",512)));
+			cm.insert(ConfigPair("GLWindowHeight",boost::any(pchild.get<unsigned>
+				("Height",512))));
+			pchild=pchild.get_child("GLSL");
+			cm.insert(ConfigPair("GLVersionMajor",pchild.get<int>
+				("VersionMajor",3)));
+			cm.insert(ConfigPair("GLVersionMinor",pchild.get<int>
+				("VersionMinor",3)));
+			cm.insert(ConfigPair("GLProfileCore",pchild.get<bool>
+				("ProfileCore",true)));
+		}
+
 	}
 
 }

@@ -1,0 +1,18 @@
+<GameConfig>
+	<GameName>Magic-Cubes游戏</GameName>
+	<ImageResDir>images</ImageResDir>
+	<AudioResDir>audios</AudioDir>
+	<ModelResDir>models</ModelResDir>
+	<ShadersResDir>shaders</ShaderResDir>
+
+	<GLWindow>
+		<Title>Magic-Cubes游戏</Title>
+		<Width>512</Width>
+		<Height>512</Height>
+		<GLSL>
+			<VersionMajor>3</VersionMajor>
+			<VersionMinor>3</VersionMinor>
+			<ProfileCore>true</ProfileCore>
+		</GLSL>
+	</GLWindow>
+</GameConfig>
