@@ -1,18 +1,14 @@
 <GameConfig>
-	<GameName>Magic-Cubes游戏</GameName>
-	<ImageResDir>images</ImageResDir>
-	<AudioResDir>audios</AudioDir>
-	<ModelResDir>models</ModelResDir>
-	<ShadersResDir>shaders</ShaderResDir>
-
-	<GLWindow>
-		<Title>Magic-Cubes游戏</Title>
-		<Width>512</Width>
-		<Height>512</Height>
-		<GLSL>
-			<VersionMajor>3</VersionMajor>
-			<VersionMinor>3</VersionMinor>
-			<ProfileCore>true</ProfileCore>
-		</GLSL>
-	</GLWindow>
+	<Item tag="GameName" type="string">Magic-Cubes游戏</Item>
+	<Item tag="ImageResDir" type="string">images</Item>
+	<Item tag="AudioResDir" type="string">audios</Item>
+	<Item tag="ModelResDir" type="string">models</Item>
+	<Item tag="ShaderResDir" type="string">shaders</Item>
+	<Item tag="GLWindowTitle" type="string">Magic-Cubes游戏</Item>
+	<Item tag="GLWindowWidth" type="int">512</Item>
+	<Item tag="GLWindowHeight" type="int">512</Item>
+	<Item tag="GLVersionMajor" type="int">3</Item>
+	<Item tag="GLVersionMinor" type="int">3</Item>
+	<Item tag="GLProfileCore" type="bool">true</Item>
+	<!--<Item tag="" type=""></Item>-->
 </GameConfig>

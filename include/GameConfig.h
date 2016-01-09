@@ -20,11 +20,6 @@
 namespace game{
 namespace config{
 
-	template <typename Type>
-	Type & as(boost::any an){
-		return boost::any_cast<Type&>(an);
-	}
-
 	class GameConfig
 	{
 	public:
@@ -38,6 +33,13 @@ namespace config{
 		*析构函数
 		*/
 		~GameConfig();
+
+		template <typename Type>
+		inline Type get(std::string tag){
+			return boost::any_cast<Type>(getConfig(tag));
+		}
+
+	private:
 
 		boost::any getConfig(std::string name);
 	

@@ -2,22 +2,24 @@ SOURCE_PATH=../../GameConfig
 INCLUDE_PATH=../../../include
 RESOURCE_PATH=../../../res
 
-mtest1:${SOURCE_PATH}/GameConfig.cpp ${INCLUDE_PATH}/GameConfig.h test1.cpp\
+TEST_NEED=${SOURCE_PATH}/GameConfig.cpp ${INCLUDE_PATH}/GameConfig.h\
 	${SOURCE_PATH}/GameConfigHead.h ${SOURCE_PATH}/Parser.cpp
-	g++ ${SOURCE_PATH}/GameConfig.cpp  test1.cpp\
-		${SOURCE_PATH}/Parser.cpp\
-		-o test1 -lboost_program_options -lboost_system -lboost_filesystem\
-		-I${INCLUDE_PATH}/ -std=c++11
+COMPILE_NEED=${SOURCE_PATH}/GameConfig.cpp \
+	${SOURCE_PATH}/Parser.cpp\
+	-lboost_program_options -lboost_system -lboost_filesystem\
+	-I${INCLUDE_PATH}/ -std=c++11 -g
+CPP_COMPILE=g++
 
-mtest2:${SOURCE_PATH}/GameConfig.cpp ${INCLUDE_PATH}/GameConfig.h test2.cpp\
-	${SOURCE_PATH}/GameConfigHead.h ${SOURCE_PATH}/Parser.cpp
-	g++ ${SOURCE_PATH}/GameConfig.cpp  test2.cpp\
-		${SOURCE_PATH}/Parser.cpp\
-		-o test2 -lboost_program_options -lboost_system -lboost_filesystem\
-		-I${INCLUDE_PATH}/ -std=c++11
+TEST_ARGS=--file=${RESOURCE_PATH}/config.xml
+
+mtest1:${TEST_NEED} test1.cpp
+	${CPP_COMPILE} -o test1 test1.cpp ${COMPILE_NEED}
+
+mtest2:${TEST_NEED} test2.cpp
+	${CPP_COMPILE} -o test2 test2.cpp ${COMPILE_NEED}
 
 testsuit1:test1
-	./test1 --file=${RESOURCE_PATH}/config.xml
+	./test1 ${TEST_ARGS}
 
 testsuit2:test2
-	./test2 --file=${RESOURCE_PATH}/config.xml
+	./test2 ${TEST_ARGS}
