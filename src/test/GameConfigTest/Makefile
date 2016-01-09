@@ -7,7 +7,7 @@ TEST_NEED=${SOURCE_PATH}/GameConfig.cpp ${INCLUDE_PATH}/GameConfig.h\
 COMPILE_NEED=${SOURCE_PATH}/GameConfig.cpp \
 	${SOURCE_PATH}/Parser.cpp\
 	-lboost_program_options -lboost_system -lboost_filesystem\
-	-I${INCLUDE_PATH}/ -std=c++11
+	-I${INCLUDE_PATH}/ -std=c++11 -g
 CPP_COMPILE=g++
 
 TEST_ARGS=--file=${RESOURCE_PATH}/config.xml

@@ -11,6 +11,22 @@ namespace config{
 	namespace bf=boost::filesystem;
 	namespace bpt=boost::property_tree;
 
+	inline void parse_item(ConfigMap & cm,bpt::ptree & pt){
+		using namespace bpt;
+		std::string type=pt.get<std::string>("<xmlattr>.type","None");
+		std::string tag=pt.get<std::string>("<xmlattr>.tag","None");
+		if (tag=="None"){
+			std::cerr<<"在配置文件中没有标识符"<<std::endl;
+			std::exit(0);
+		}
+		if (type=="string"){
+			cm.insert(ConfigPair(tag,pt.get_value<std::string>()));
+		}else if (type=="int"){
+			cm.insert(ConfigPair(tag,pt.get_value<int>()));
+		}else if (type=="bool"){
+			cm.insert(ConfigPair(tag,pt.get_value<bool>()));
+		}
+	}
 
 	std::string parse_cmd(int argc,char * argv []){
 
@@ -46,6 +62,17 @@ namespace config{
 		using namespace bpt;
 
 		ptree pt;
+		read_xml(filename,pt);
+		ptree  child=pt.get_child("GameConfig");
+		ptree::iterator it=child.begin();
+		for (;it!=child.end();++it){
+			if ((*it).first=="Item"){
+				ptree & ip=(*it).second;
+				parse_item(cm,ip);
+			}
+		}
+
+		/*
 		bf::path p(filename);
 		bf::path resdir=p.parent_path();
 		if (!bf::exists(resdir)){
@@ -100,6 +127,8 @@ namespace config{
 			cm.insert(ConfigPair("GLProfileCore",pchild.get<bool>
 				("ProfileCore",true)));
 		}
+
+		*/
 
 	}
 

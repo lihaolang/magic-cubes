@@ -18,12 +18,12 @@ namespace config{
 		~GameConfigImpl();
 
 		boost::any getConfig(std::string name){
-			boost:: any & ret=m_stConfigMap[name];
-			if (ret.empty()){
+			ConfigMap::iterator ret=m_stConfigMap.find(name);
+			if (ret==m_stConfigMap.end()){
 				std::cerr<<"没有此配置，退出。"<<std::endl;
 				std::exit(0);
 			}
-			return ret;
+			return ret->second;
 		}
 	private:
 		ConfigMap m_stConfigMap;

@@ -35,8 +35,8 @@ namespace config{
 		~GameConfig();
 
 		template <typename Type>
-		inline const Type & get(std::string tag){
-			return boost::any_cast<const Type&>(getConfig(tag));
+		inline Type get(std::string tag){
+			return boost::any_cast<Type>(getConfig(tag));
 		}
 
 	private:
