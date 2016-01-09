@@ -5,5 +5,5 @@ int main(int argc,char * argv []){
 
 	GameConfig gc(argc,argv);
 
-	std::cout<<as<std::string>(gc.getConfig("ImagesDir"))<<std::endl;
+	std::cout<<gc.get<std::string>("ImagesDir")<<std::endl;
 }
