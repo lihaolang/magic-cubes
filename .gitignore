@@ -2,6 +2,11 @@
 /src/test/GameConfigTest/test1
 /src/test/GameConfigTest/test2
 
+#所有的可执行文件(*.out)、中间文件(*.o)、库文件(*.so,*.a)
+*.so
+*.o
+*.a
+*.out
 
 #doc的图片(通过graphviz生成)
 /doc/OverView.png
