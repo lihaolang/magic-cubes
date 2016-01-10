@@ -8,5 +8,14 @@
 *.a
 *.out
 
-#doc的图片(通过graphviz生成)
-/doc/OverView.png
+#所有doc的图片
+/doc/*.png
+
+#大部分资源
+/res/shaders
+/res/models
+/res/audios
+/res/images
+
+#配置文件要跟踪
+!/res/config.xml
